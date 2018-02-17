@@ -1,0 +1,124 @@
+body{
+   background: url("/Users/zachgish/Desktop/U of U Bootcamp/Hangman_Game.html/img/background.jpeg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+button{
+  float: right;
+}
+#alphabet-keypad, #hangman-graphic, #letter-graveyard {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+.row {
+  width: 100%;
+}
+
+
+#alphabet-keypad {
+  margin-left: 4%;
+  text-align: center;
+}
+.letter-button, .letter-disabled {
+  border-radius: 50%;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 24px;
+  height: 35.83px;
+  margin: 2px 1px;
+  padding-top: 0.1em;
+  width: 35.83px;
+
+  transition: color 0.2s,
+  background-color 0.2s;
+}
+.letter-button {
+  border: 1px solid yellow;
+  color: yellow;
+  text-shadow: 2px 2px 4px #000000
+}
+.letter-button:hover {
+  background-color: yellow;
+  color: white;
+  cursor: pointer;
+}
+.letter-disabled {
+  border: 1px solid lightgrey;
+  color: lightgrey;
+  cursor: default;
+}
+
+
+#hangman-graphic {
+  max-width: 50%;
+}
+#hangman-graphic img {
+  margin-left: 16px;
+  max-width: 100%;
+}
+.hangman-frames {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  transition: opacity 0.2s;
+}
+#hangman-frame0 {
+  opacity: 1;
+}
+.hangman-controls {
+  margin-top: 36px;
+  text-align: center;
+}
+
+
+.title {
+  margin: 8px 0;
+  text-align: center;
+  color: yellow; 
+  text-shadow: 2px 2px 4px #000000
+  
+}
+
+#letter-graveyard {
+  max-width: 50%;
+  padding: 36px;
+  text-align: center;
+}
+#letter-graveyard img {
+  max-width: 100%;
+}
+
+
+.character-block {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  margin: 2px;
+  vertical-align: top;
+  text-align: center;
+}
+.character-block span {
+  font-size: 24px;
+  padding: 3px 4px;
+}
+
+.is-letter {
+  box-shadow: 0 1px 0 0 yellow;
+}
+
+
+.grave-letter {
+  color: yellow;
+  display: inline-block;
+  margin: 2px;
+  vertical-align: top;
+  font-size: 24px;
+  padding: 4px 3px;
+  border: 1px solid yellow;
+  border-radius: 100% 100% 0 0 ;
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+</head>
+<body>
+<!-- Button trigger rules to the game -->
+<div><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rulestogame">
+    Empires Orders!
+</button>
+
+<h1 class="title">Star Wars</h1>
+
+<!-- Modal rules to the game -->
+<div class="modal fade" id="rulestogame" tabindex="-1" role="dialog" aria-labelledby="rulestogameLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="rulestogameLabel">Hangman Rules</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                    <h4>"What is thy bidding, my master?"</h4>
+                    <p>"There is a great disturbance in the Force. You must guess the Rebels words or we will loose our most trusted Stormtrooper."</p>
+                    <ol>
+                        <li>Click to choose a letter from the left.</li>
+                        <li>If the letter is contained in the word, it will display in the word box below the gallows. If you guess wrong the letter will go to the display screen.</li>
+                        <li>Keep guessing for whole word or the Stormtrooper will be hung.</li>
+                    
+                    </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>   
+<!-- Modal You Won Message -->
+<div class="modal fade" id="you_won" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class=" modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class=" modal-title">Balance has been restored to the Force!</h4>
+            </div>
+            <div class="modal-body">
+                <h5>Congratulations, you saved our Stormtrooper from being executed!</h5>
+            </div>
+            <div class="modal-footer">
+                <button class="btn reset" data-dismiss="modal">Close and Reset </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal You Lost Message -->
+<div class="modal fade" id="you_lost" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class=" modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class=" modal-title">You have failed me for the last time!</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <img class="center-block" src"/Users/zachgish/Desktop/U of U Bootcamp/Hangman_Game.html/img/vader.jpg" alt="vader">
+                        </div><!--md8-->
+                    </div><!--row-->
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <p class="lead"></p>
+                    </div><!--md10-->
+                </div><!--/.row-->
+            </div><!--container-->
+        </div><!--moral-->
+            <div class="modal-footer">
+                <button class="btn reset" data-dismiss="modal">Close and Reset </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--alphabet-->
+<div class="row">
+
+    <div id="alphabet-keypad" class="col-sm-4">
+        <div class="letter-button">A</div>
+        <div class="letter-button">B</div>
+        <div class="letter-button">C</div>
+        <div class="letter-button">D</div>
+        <div class="letter-button">E</div>
+        <div class="letter-button">F</div>
+        <div class="letter-button">G</div>
+        <div class="letter-button">H</div>
+        <div class="letter-button">I</div>
+        <div class="letter-button">J</div>
+        <div class="letter-button">K</div>
+        <div class="letter-button">L</div>
+        <div class="letter-button">M</div>
+        <div class="letter-button">N</div>
+        <div class="letter-button">O</div>
+        <div class="letter-button">P</div>
+        <div class="letter-button">Q</div>
+        <div class="letter-button">R</div>
+        <div class="letter-button">S</div>
+        <div class="letter-button">T</div>
+        <div class="letter-button">U</div>
+        <div class="letter-button">V</div>
+        <div class="letter-button">W</div>
+        <div class="letter-button">X</div>
+        <div class="letter-button">Y</div>
+        <div class="letter-button">Z</div>
+    </div>
+
+<!--stormtrooper img-->
+
+    <div id="hangman-graphic" class="col-sm-3">
+
+        <img class="hangman-frames" id="hangman-frame0" src="img/hangman-pic/gallows.jpg">
+        <img class="hangman-frames" id="hangman-frame1" src="img/hangman-pic/Head_stormtrooper.jpg">
+        <img class="hangman-frames" id="hangman-frame2" src="img/hangman-pic/body_stormtrooper.jpg">
+        <img class="hangman-frames" id="hangman-frame3" src="img/hangman-pic/leftarm_stormtrooper.jpg">
+        <img class="hangman-frames" id="hangman-frame4" src="img/hangman-pic/rightarm_stormstrooper.jpg">
+        <img class="hangman-frames" id="hangman-frame5" src="img/hangman-pic/leftleg_stormtrooper.jpg">
+        <img class="hangman-frames" id="hangman-frame6" src="img/hangman-pic/stormtrooper_full.jpg">
+
+<!-- new word-->
+        <div class="hangman-controls">
+            <button class="btn btn-success reset">
+                Reset
+            </button>
+        </div>
+    </div>
+<!-- wrong letter display-->
+    <div id="letter-graveyard" class="col-sm-4">
+        <img src="/Users/zachgish/Desktop/U of U Bootcamp/Hangman_Game.html/img/screentext.jpeg">
+    </div>
+    </div>
+    
+    <!-- dissplay how many letters to guess-->
+    <div class="row text-center">
+        <div id="word-to-guess"></div>
+    </div>
+    
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="/Users/zachgish/Desktop/U of U Bootcamp/Hangman_Game.html/scripts/mainhang.js"></script>
+    <script src="/Users/zachgish/Desktop/U of U Bootcamp/Hangman_Game.html/scripts/script.js"></script>
+</body>
+</html>
