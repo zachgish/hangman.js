@@ -1,9 +1,6 @@
-// Self invoking function hides currentWord from the console
+
 (function () {
-    /*
-     * Pick from alphabet keypad. Returns the letter chosen.*/
-
-
+   
     $("#alphabet-keypad").on("click", ".letter-button", pickLetter);
 
     function pickLetter() {
@@ -21,14 +18,13 @@
         var resultMatches = [];
         var ind = currentWord.indexOf(letterPicked);
 
-        // if letterPicked matches one or more letters in the current word
-        // push all instances of that letter to resultMatches
+       
         while (ind !== -1) {
             resultMatches.push(ind);
             ind = currentWord.indexOf(letterPicked, ind + 1);
         }
 
-        //if resultMatches is greater than 0 proceed to place them in the dom
+    
         if (resultMatches.length > 0) {
             var letterBlocks = document.getElementsByClassName("is-letter");
             resultMatches.map(function (num) {
@@ -39,7 +35,7 @@
                 displayCongratulatoryMessageOnWin();
 
             });
-            //if letterBlock is not greater than 0 put the letter in the graveyard
+           
         } else {
             var domElem = document.createElement("div");
             domElem.className = "grave-letter";
@@ -59,7 +55,7 @@
 
     function displayGameOverMessageOnLose() {
         var incorrectlyGuessedLettersCount = $("#letter-graveyard > div").length;
-        //If number of letters guessed is equal to maxParts
+       
         if (incorrectlyGuessedLettersCount === 5) {
             $("#you_lost").modal('show');
             var gameOverMessage = "Uh oh. You took too many tries to guess the word. The correct word is - '" + currentWord + "'. Better luck next time.";
@@ -67,9 +63,7 @@
         }
     }
 
-    /*
-     * Hangman graphic with methods addBodyPart() and reset()
-     */
+    
     var hangmanGraphic = function () {
         var bodyParts = 0,
             maxParts = 5;
@@ -94,8 +88,7 @@
         };
     }();
 
-    // Next 2 lines will be refactored into interface for
-    //   losing a life and reseting the game
+    
     $(".reset").on("click", hangmanGraphic.reset);
 
     function resetAlphabetKeypad() {
@@ -120,7 +113,7 @@
         $("#word-to-guess").html('');
     }
 
-    // adding dictionary and word filter //
+    
     var hangmanWords = [
         "yoda", "naboo", "jarjar", "darthvader", "darthmaul", "skywalker", "jangofett", "bobafett", "hansolo",
         "jedi", "sith", "force", "chewbacca", "wookiee", "leia", "jaba", "obiwankenobi", "rebel", "empire", "stormtrooper", "clonetrooper",
@@ -143,13 +136,9 @@
 
     function setWordToBeGuessed() {
 
-        currentWordFull = wordSelect(hangmanWords);//IMPORTANT: replace the number with wordSelect (the function) for production use
-
-        //set an all upper case version of the current word
+        currentWordFull = wordSelect(hangmanWords);
         currentWord = currentWordFull.toUpperCase();
-        //creates blocks in the DOM indicating where there are letters and spaces
-
-
+        
         currentWord.split("").map(function (character) {
             var guessWordBlock = document.getElementById("word-to-guess");
 
