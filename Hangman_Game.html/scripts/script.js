@@ -143,8 +143,7 @@
             var guessWordBlock = document.getElementById("word-to-guess");
 
             var domElem = document.createElement("div");
-
-            if (character.match(/F[a-z]/i)) {
+            if (character.match(/[a-z]/i)) {
                 domElem.className = "character-block is-letter";
 
             } else {

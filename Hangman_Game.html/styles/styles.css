@@ -1,5 +1,5 @@
 body{
-   background: url("/Users/zachgish/Desktop/U of U Bootcamp/Hangman_Game.html/img/background.jpeg");
+   background: url("../img/background.jpeg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -103,6 +103,7 @@ button{
   text-align: center;
 }
 .character-block span {
+  color: yellow;
   font-size: 24px;
   padding: 3px 4px;
 }
